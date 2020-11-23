@@ -18,7 +18,7 @@ namespace Week9ProgrammingPractice
 
     public enum Genre { Rock, Pop, Dance, Other }
 
-    public class Song
+    public class Song : IComparable
     {
         #region Properties
 
@@ -53,7 +53,23 @@ namespace Week9ProgrammingPractice
         public override string ToString()
         {
             return string.Format($"{Artist, -18}{Title, -28}{Duration, -15}{MusicGenre, -15}");
-        }
+
+        }//End of ToString Method
+
+        public int CompareTo(object otherObject)
+        {
+            Song that = (Song)otherObject;
+
+            int returnValue = this.Artist.CompareTo(that.Artist);//Sort by Artist
+
+            if(returnValue == 0)
+            {
+                returnValue = this.Title.CompareTo(that.Title);//If Artists Same, Sort by Title
+            }
+
+            return returnValue;
+
+        }//End of CompareTo Method
 
         #endregion
 
