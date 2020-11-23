@@ -52,7 +52,7 @@ namespace Week9ProgrammingPractice
 
         public override string ToString()
         {
-            return string.Format($"{Title} {Artist} {Duration} {MusicGenre}");
+            return string.Format($"{Artist, -18}{Title, -28}{Duration, -15}{MusicGenre, -15}");
         }
 
         #endregion

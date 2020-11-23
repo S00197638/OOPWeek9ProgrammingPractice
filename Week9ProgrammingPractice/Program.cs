@@ -34,14 +34,17 @@ namespace Week9ProgrammingPractice
             playlist.Add(song4);
             playlist.Add(song5);
 
+            Console.WriteLine("You Have Created A New Playlist!");
             DisplayPlaylist(playlist);
 
             Console.ReadLine();
 
         }//End of Main Method
 
-        static void DisplayPlaylist(List<Song> playlist)
+        private static void DisplayPlaylist(List<Song> playlist)
         {
+            Console.WriteLine("\n{0, -18}{1, -28}{2, -15}{3, -15}", "Artist", "Song", "Duration", "Genre");
+            
             foreach (Song song in playlist)
             {
                 Console.WriteLine(song);
